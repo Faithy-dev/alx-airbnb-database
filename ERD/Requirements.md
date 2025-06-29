@@ -116,6 +116,6 @@ This document outlines the **Entity-Relationship (ER) diagram** and **database s
 
 ## 🖼 ER Diagram
 
-> ![ER Diagram](./airbnb_er_diagram.png)
+> ![ER Diagram](https://github.com/Faithy-dev/alx-airbnb-database/blob/main/airbnb_er_diagram.png)
 
-> _(Tip: Replace this link with your hosted image or adjust the file path if needed)_
+
