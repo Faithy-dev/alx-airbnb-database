@@ -1,4 +1,4 @@
--- Initial unoptimized query
+-- Initial unoptimized query with WHERE and AND
 EXPLAIN ANALYZE
 SELECT 
     b.id AS booking_id,
@@ -8,10 +8,11 @@ SELECT
 FROM bookings b
 JOIN users u ON b.user_id = u.id
 JOIN properties p ON b.property_id = p.id
-JOIN payments pay ON b.id = pay.booking_id;
+JOIN payments pay ON b.id = pay.booking_id
+WHERE pay.status = 'completed'
+  AND p.location = 'New York';
 
--- Optimized query (remove unnecessary columns and reduce joins if possible)
--- Assume we only need user name, property name, and amount paid for reports
+-- Optimized query with WHERE and AND
 EXPLAIN ANALYZE
 SELECT 
     b.id AS booking_id,
@@ -21,4 +22,6 @@ SELECT
 FROM bookings b
 JOIN users u ON b.user_id = u.id
 JOIN properties p ON b.property_id = p.id
-JOIN payments pay ON b.id = pay.booking_id;
+JOIN payments pay ON b.id = pay.booking_id
+WHERE pay.status = 'completed'
+  AND p.location = 'New York';
